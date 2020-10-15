@@ -1,0 +1,288 @@
+<!-- it extends index page -->
+{% extends "index.html" %}
+
+<!-- retailer management form block started -->
+{% block retailer_mgmt %}
+   <div class="col-lg-12 bg bg-light text-center">
+      <h2 class="text-center p-4">Consumer Data Management</h2>
+   </div>
+	<form class="form-horizontal col-xs-12 col-lg-12 col-md-12 col-sm-12" method="POST" action="{{url_for('update_retailerRecords')}}" name="wform" >
+      <fieldset  class="row sec1 mb-4">
+         <legend class="bg bg-dark text-light col-lg-3">Consumer Information</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="pName" class="text-light bg bg-info" >Program Name</label>
+            <input type="text" class="form-control" id="pName" placeholder="Enter Program Name" name="pName" >
+         </div>
+         <div class="form-group col-4">
+            <label for="accN"  class="text-light bg bg-info">Account # </label>
+            <input type="Number" class="form-control" id="accN" placeholder="Enter Account No" name="accN" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="addrs" class="text-light bg bg-info">Address</label>
+            <input type="text" class="form-control" id="addrs" placeholder="Address" name="addrs" >
+         </div>
+         <div class="form-group col-4">
+            <label for="city" class="text-light bg bg-info">City </label>
+            <input type="text" class="form-control" id="city" placeholder="Enter City" name="city" >
+         </div>
+         <div class="form-group col-4">
+            <label for="state" class="text-light bg bg-info">State </label>
+            <input type="text" class="form-control" id="state" placeholder="Enter  State"  name="state" >
+         </div>
+
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="zCode" class="text-light bg bg-info">Zip Code</label>
+            <input type="Number" class="form-control" id="zCode" placeholder="Enter Zip Code" name="zCode" >
+         </div>
+         <div class="form-group col-4">
+            <label for="cntry" class="text-light bg bg-info">Country </label>
+            <input type="text" class="form-control" id="cntry" placeholder="Enter Country" name="cntry" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="strDate" class="text-light bg bg-info">Start Date</label>
+            <input type="date" class="form-control pr-10" id="strDate" placeholder="Choose Start Date" name="strDate" >
+         </div>
+         <div class="form-group col-4">
+            <label for="status" class="text-light bg bg-info">Status </label>
+            <input type="text" class="form-control" id="status" placeholder="Enter Status" name="status" >
+         </div>
+         
+      </fieldset>
+
+      <!-- Job Title -->
+      <fieldset  class="row sec1 mb-4">
+         <legend  class="bg bg-dark text-light col-lg-3">Job Title</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="jobTitle" class="text-light bg bg-info">Job Title</label>
+            <input type="text" class="form-control" id="jobTitle" placeholder="Enter Job Title" name="jobTitle" >
+         </div>   
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="fName" class="text-light bg bg-info">First Name</label>
+            <input type="text" class="form-control" id="fName" placeholder="Enter First Name" name="fName" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="lName" class="text-light bg bg-info">Last Name</label>
+            <input type="text" class="form-control" id="lName" placeholder="Enter Last Name" name="lName" >
+         </div>  
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="phone" class="text-light bg bg-info">Phone Number</label>
+            <input type="Number" class="form-control" id="phone" placeholder="Enter Phone Number" name="phone" >
+         </div> 
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="ext" class="text-light bg bg-info">Ext #</label>
+            <input type="text" class="form-control" id="ext" placeholder="Enter Ext " name="ext" >
+         </div>  
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="mobile" class="text-light bg bg-info">Mobile</label>
+            <input type="Number" class="form-control" id="mobile" placeholder="Enter Mobile Number" name="mobile" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="email" class="text-light bg bg-info">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email Id" name="email" >
+         </div> 
+      </fieldset>
+
+      <!-- Job Title 2 -->
+      <fieldset  class="row sec1 mb-4">
+         <legend  class="bg bg-dark text-light col-lg-3">Job Title2</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="jobTitle2" class="text-light bg bg-info">Job Title </label>
+            <input type="text" class="form-control" id="jobTitle2" placeholder="Enter Job Title" name="jobTitle2" >
+         </div>   
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="fName2" class="text-light bg bg-info">First Name</label>
+            <input type="text" class="form-control" id="fName2" placeholder="Enter First Name" name="fName2" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="lName2" class="text-light bg bg-info">Last Name</label>
+            <input type="text" class="form-control" id="lName2" placeholder="Enter Last Name" name="lName2" >
+         </div>  
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="phone2" class="text-light bg bg-info">Phone Number</label>
+            <input type="Number" class="form-control" id="phone2" placeholder="Enter Phone Number" name="phone2" >
+         </div> 
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="mobile2" class="text-light bg bg-info">Mobile</label>
+            <input type="Number" class="form-control" id="mobile2" placeholder="Enter Mobile Number" name="mobile2" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="email2" class="text-light bg bg-info">Email</label>
+            <input type="email" class="form-control" id="email2" placeholder="Enter Email Id" name="email2" >
+         </div> 
+      </fieldset>
+
+
+      <!-- Job Title 3-->
+      <!-- <fieldset  class="row sec1 mb-4">
+         <legend class="bg bg-dark text-light col-lg-3">Job Title3</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="jobTitle3" class="text-light bg bg-info">Job Title</label>
+            <input type="text" class="form-control" id="jobTitle3" placeholder="Enter Job Title" name="jobTitle3" >
+         </div>   
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="fName3" class="text-light bg bg-info">First Name</label>
+            <input type="text" class="form-control" id="fName3" placeholder="Enter First Name" name="fName3" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="lName3" class="text-light bg bg-info">Last Name</label>
+            <input type="text" class="form-control" id="lName3" placeholder="Enter Last Name" name="lName3" >
+         </div>  
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="phone3" class="text-light bg bg-info">Phone Number</label>
+            <input type="Number" class="form-control" id="phone3" placeholder="Enter Phone Number" name="phone3" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="mobile3" class="text-light bg bg-info">Mobile</label>
+            <input type="Number" class="form-control" id="mobile3" placeholder="Enter Mobile Number" name="mobile3" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="email3" class="text-light bg bg-info">Email</label>
+            <input type="email" class="form-control" id="email3" placeholder="Enter Email Id" name="email3" >
+         </div> 
+      </fieldset> 
+ -->
+      <!-- Job Title 4 -->
+ <!--      <fieldset  class="row sec1 mb-4">
+         <legend class="bg bg-dark text-light col-lg-3">Job Title4</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="jobTitle4" class="text-light bg bg-info">Job Title </label>
+            <input type="text" class="form-control" id="jobTitle4" placeholder="Enter Job Title" name="jobTitle4" >
+         </div>   
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="fName4" class="text-light bg bg-info">First Name</label>
+            <input type="text" class="form-control" id="fName4" placeholder="Enter First Name" name="fName4" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="lName4" class="text-light bg bg-info">Last Name</label>
+            <input type="text" class="form-control" id="lName4" placeholder="Enter Last Name" name="lName4" >
+         </div>  
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="phone4" class="text-light bg bg-info">Phone Number</label>
+            <input type="Number" class="form-control" id="phone4" placeholder="Enter Phone Number" name="phone4" >
+         </div> 
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="mobile4" class="text-light bg bg-info">Mobile</label>
+            <input type="Number" class="form-control" id="mobile4" placeholder="Enter Mobile Number" name="mobile4" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="email4" class="text-light bg bg-info">Email</label>
+            <input type="email" class="form-control" id="email4" placeholder="Enter Email Id" name="email4" >
+         </div> 
+      </fieldset> -->
+
+
+      <!-- National Account Rep  -->
+      <!-- <fieldset  class="row sec1 mb-4">
+         <legend class="bg bg-dark text-light col-lg-3">National Account Rep</legend>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="NARepfName" class="text-light bg bg-info">First Name </label>
+            <input type="text" class="form-control" id="NARepfName" placeholder="Enter NAR First Name" name="NARepfName" >
+         </div>   
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="NARepLName" class="text-light bg bg-info">Last Name</label>
+            <input type="text" class="form-control" id="NARepLName" placeholder="Enter NAR Last Name" name="NARepLName" >
+         </div>
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="NARepMobile" class="text-light bg bg-info">Mobile Number</label>
+            <input type="Number" class="form-control" id="NARepMobile" placeholder="Enter Mobile Number" name="NARepMobile" >
+         </div> 
+         <div class="form-group col-lg-4 col-sm-12">
+            <label for="NARepMail" class="text-light bg bg-info">Email</label>
+            <input type="email" class="form-control" id="NARepMail" placeholder="Enter Email Id" name="NARepMail" >
+         </div> 
+      </fieldset>
+      ---->
+         
+         <div class="form-group col-lg-12 text-center ">
+            <button type="Submit" class="btn btn-primary">Submit Info</button>
+         </div>
+   </form> 
+   <!-- End of Form -->
+
+
+   <!-- Dsiplay Data in the form of CARD -->
+      <div class="row pl-3 pr-3">
+      <div class="col-lg-12 text-center m-4">
+         <h2>Consumer Data INFO</h2>
+      </div>
+      
+      {% for p in rtlrList %}
+      
+      <div class="col-sm-12 col-lg-4 col-md-6 mb-3">
+         <div class="card">
+            <div class="card-body">
+               <h5 class="card-title bg bg-dark text-light p-1">Program Name : {{p["ProgramName"]}}</h5>
+               <table class="mb-4">
+                  <tr><td>Account # : </td><td>{{p["Account"]}}</td></tr>
+                  <tr><td class="pr-4">Address : </td><td>{{p["Address1"]}}</td></tr>
+                  <tr><td>City : </td><td>{{p["City"]}}</td></tr>
+                  <tr><td>State : </td><td>{{p["State"]}}</td></tr>
+                  <tr><td>Zip Code : </td><td>{{p["Zip"]}}</td></tr>
+
+                  <tr><td>Country : </td><td>{{p["Country"]}}</td></tr>
+                  <tr><td>Start Date : </td><td>{{p["Hire"]}}</td></tr>
+                  <tr><td>Status : </td><td>{{p["Status"]}}</td></tr>
+
+                  <tr><td>Job Title : </td><td>{{p["Jobtitle"]}}</td></tr>
+                  <tr><td>First Name : </td><td>{{p["FirstName"]}}</td></tr>
+                  <tr><td>Last Name : </td><td>{{p["LastName"]}}</td></tr>
+                  <tr><td>Phone Number : </td><td>{{p["Phone1"]}}</td></tr>
+                  <tr><td>Ext# : </td><td>{{p["PhoneExt"]}}</td></tr>
+                  <tr><td>Mobile : </td><td>{{p["Mobile1"]}}</td></tr>
+                  <tr><td>Email : </td><td>{{p["Email1"]}}</td></tr>
+
+                  <!-- <tr><td>Job Title : </td><td>{{p["Jobtitle2"]}}</td></tr>
+                  <tr><td>First Name : </td><td>{{p["FirstName2"]}}</td></tr>
+                  <tr><td>Last Name : </td><td>{{p["LastName2"]}}</td></tr>
+                  <tr><td>Phone Number : </td><td>{{p["Phone2"]}}</td></tr>
+                  <tr><td>Mobile : </td><td>{{p["Mobile2"]}}</td></tr>
+                  <tr><td>Email : </td><td>{{p["Email2"]}}</td></tr>
+ -->
+                  <!-- <tr><td>Job Title : </td><td>{{p["Jobtitle3"]}}</td></tr>
+                  <tr><td>First Name : </td><td>{{p["FirstName3"]}}</td></tr>
+                  <tr><td>Last Name : </td><td>{{p["LastName3"]}}</td></tr>
+                  <tr><td>Phone Number : </td><td>{{p["Phone3"]}}</td></tr>
+                  <tr><td>Mobile : </td><td>{{p["Mobile3"]}}</td></tr>
+                  <tr><td>Email : </td><td>{{p["Email3"]}}</td></tr>
+
+                  <tr><td>Job Title : </td><td>{{p["Jobtitle4"]}}</td></tr>
+                  <tr><td>First Name : </td><td>{{p["FirstName4"]}}</td></tr>
+                  <tr><td>Last Name : </td><td>{{p["LastName4"]}}</td></tr>
+                  <tr><td>Phone Number : </td><td>{{p["Phone4"]}}</td></tr>
+                  <tr><td>Mobile : </td><td>{{p["Mobile4"]}}</td></tr>
+                  <tr><td>Email : </td><td>{{p["Email4"]}}</td></tr>
+
+                  <tr><td>ANAR First Name : </td><td>{{p["ANtlAcctRepFirst"]}}</td></tr>
+                  <tr><td>ANAR Last Name : </td><td>{{p["ANtlAcctRepLast"]}}</td></tr>
+                  <tr><td>ANAR Mobile Number : </td><td>{{p["ANtlAcctRepPhone"]}}</td></tr>
+                  <tr><td>ANAR Email : </td><td>{{p["ANtlAcctRepEmail"]}}</td></tr> -->
+               </table>
+               <div class="row">
+                  <form method="POST" action="edit/{{p['_id']}}" class="col-lg-3 col-md-3">
+                     <div class="form-group ">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
+                     </div>
+                  </form>
+                  <!-- <form method="POST" action="delete/{{p['_id']}}" class="col-lg-3 col-md-3">
+                     <div class="form-group ">
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                     </div>
+                  </form>
+                  <form method="POST" action="remove_field/{{p['_id']}}" class="col-lg-6 col-md-6">
+                     <div class="form-group ">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-minus-circle" aria-hidden="true"></i> Clear Details</button>
+                     </div>
+                  </form> -->
+               </div>
+               <!-- <a href="#" class="btn btn-primary">Edit</a>
+               <a href="#" class="btn btn-primary">Delete</a> -->
+            </div>
+         </div>
+      </div>
+      
+      {% endfor %}
+      </div>
+  
+
+
+{% endblock %}
